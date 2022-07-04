@@ -58,30 +58,30 @@ namespace UnitTests
     {
         [TestCase(0, "U & PG films are available.")]
         [TestCase(11, "U & PG films are available.")]
-        public void GivenAgeOfBoundaries0to11_AvailableClassifications_ReturnsExpectedCert(int age, string cert)
+        public void GivenAgeOfBoundaries0to11_AvailableClassifications_ReturnsExpectedCert(int age, string result)
         {
-            Assert.That(Program.AvailableClassifications(age), Is.EqualTo(cert));
+            Assert.That(Program.AvailableClassifications(age), Is.EqualTo(result));
         }
 
         [TestCase(12, "U, PG & 12 films are available.")]
         [TestCase(14, "U, PG & 12 films are available.")]
-        public void GivenAgeOfBoundaries12to14_AvailableClassifications_ReturnsExpectedCert(int age, string cert)
+        public void GivenAgeOfBoundaries12to14_AvailableClassifications_ReturnsExpectedCert(int age, string result)
         {
-            Assert.That(Program.AvailableClassifications(age), Is.EqualTo(cert));
+            Assert.That(Program.AvailableClassifications(age), Is.EqualTo(result));
         }
 
         [TestCase(15, "U, PG, 12 & 15 films are available.")]
         [TestCase(17, "U, PG, 12 & 15 films are available.")]
-        public void GivenAgeOfBoundaries15to17_AvailableClassifications_ReturnsExpectedCert(int age, string cert)
+        public void GivenAgeOfBoundaries15to17_AvailableClassifications_ReturnsExpectedCert(int age, string result)
         {
-            Assert.That(Program.AvailableClassifications(age), Is.EqualTo(cert));
+            Assert.That(Program.AvailableClassifications(age), Is.EqualTo(result));
         }
 
         [TestCase(18, "All films are available.")]
         [TestCase(100, "All films are available.")]
-        public void GivenAgeOfBoundariesOver17_AvailableClassifications_ReturnsExpectedCert(int age, string cert)
+        public void GivenAgeOfBoundariesOver17_AvailableClassifications_ReturnsExpectedCert(int age, string result)
         {
-            Assert.That(Program.AvailableClassifications(age), Is.EqualTo(cert));
+            Assert.That(Program.AvailableClassifications(age), Is.EqualTo(result));
         }
 
         [TestCase(6)]
