@@ -1,14 +1,14 @@
 # Week 1: 27/06 - 01/07
 
-**1.** [Monday](##1. Monday) - Induction information
+[Monday](##1. Monday) - Induction information
 
-**2.** [Tuesday](##2. Tuesday) - Interview preparation
+[Tuesday](##2. Tuesday) - Interview preparation
 
-**3.** [Wednesday](##3. Wednesday) - Markdown, Shelves, Scripting & Git
+[Wednesday](##3. Wednesday) - Markdown, Shelves, Scripting & Git
 
-**4.** [Thursday](##4. Thursday) - Intro to Visual Studio, Agile & Scrum
+[Thursday](##4. Thursday) - Intro to Visual Studio, Agile & Scrum
 
-**5.** [Friday](##5. Friday) - Agile Project & Sales meeting
+[Friday](##5. Friday) - Agile Project & Sales meeting
 
 
 

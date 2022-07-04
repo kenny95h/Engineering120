@@ -1,14 +1,14 @@
 # Week 2: 04/07 - 08/07
 
-**1.** [Monday](##1. Monday) - 
+[Monday](##1. Monday) - C# Basics & Unit Testing
 
-**2.** [Tuesday](##2. Tuesday) - 
+[Tuesday](##2. Tuesday) - 
 
-**3.** [Wednesday](##3. Wednesday) - 
+[Wednesday](##3. Wednesday) - 
 
-**4.** [Thursday](##4. Thursday) - 
+[Thursday](##4. Thursday) - 
 
-**5.** [Friday](##5. Friday) - 
+[Friday](##5. Friday) - 
 
 
 
