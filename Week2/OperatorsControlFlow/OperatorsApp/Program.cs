@@ -19,9 +19,33 @@
             //    col = sprintNo % NUM_COLS;
             //}
 
+            #region Logical Operators
+            //bool isWearingParachute = false;
+            //if (isWearingParachute && JumpOutOfPlane())
+            //{
+            //    Console.WriteLine("Congrats, you have made a successful jump");
+            //}
+            //string greeting = null;
+            //if (greeting != null && greeting.ToLower().StartsWith('h'))
+            //{
+            //    Console.WriteLine($"{greeting} starts with an 'h'");
+            //}
 
+            //int n = 0;
+            //int o = 3;
+            //if (n == 5 ^ o == 3)
+            //{
+            //    Console.WriteLine("Exclusive or");
+            //}
+            #endregion
+
+            
         }
 
-        
+        public static bool JumpOutOfPlane()
+        {
+            Console.WriteLine("Jump");
+            return true;
+        }
     }
 }
