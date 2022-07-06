@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OperatorsApp", "OperatorsAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OperatorsControlFlowTests", "OperatorsControlFlowTests\OperatorsControlFlowTests.csproj", "{558E2064-1C99-479C-A07B-EF3B2D84FA5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlFlowApp", "ControlFlowApp\ControlFlowApp.csproj", "{7EE4894A-4DF9-4EBC-A02E-557D61989EF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlFlowApp", "ControlFlowApp\ControlFlowApp.csproj", "{7EE4894A-4DF9-4EBC-A02E-557D61989EF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
