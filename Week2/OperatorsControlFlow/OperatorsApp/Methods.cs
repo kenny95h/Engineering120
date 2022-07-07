@@ -10,11 +10,19 @@ namespace OperatorsApp
     {
         public static int GetStones(int totalPounds)
         {
+            if (totalPounds < 0)
+            {
+                throw new ArgumentOutOfRangeException("Must be a non-negative integer");
+            }
             return totalPounds / 14;
         }
 
         public static int GetPounds(int totalPounds)
         {
+            if (totalPounds < 0)
+            {
+                throw new ArgumentOutOfRangeException("Must be a non-negative integer");
+            }
             return totalPounds % 14;
         }
     }

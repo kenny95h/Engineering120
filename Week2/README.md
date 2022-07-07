@@ -4,7 +4,7 @@
 
 2. [Tuesday](##2. Tuesday) - Operators & Iterations
 
-3. [Wednesday](##3. Wednesday) - Exceptions
+3. [Wednesday](##3. Wednesday) - Exceptions & Data Types
 
 4. [Thursday](##4. Thursday) - 
 

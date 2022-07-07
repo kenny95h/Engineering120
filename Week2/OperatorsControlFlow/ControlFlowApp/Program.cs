@@ -13,18 +13,19 @@
             Console.WriteLine("Lowest for- loop: " + LoopTypes.LowestForLoop(nums));
             Console.WriteLine("Lowest while- loop: " + LoopTypes.LowestWhileLoop(nums));
             Console.WriteLine("Lowest do-while loop: " + LoopTypes.LowestDoWhileLoop(nums));
+            Console.WriteLine(int.MaxValue);
         }
 
-        //public static string Grade(int mark)
-        //{
-        //    if (mark < 0 || mark > 100)
-        //    {
-        //        throw new ArgumentOutOfRangeException("Must be between 0 and 100 inclusive");
-        //    }
-        //    return mark >= 85 ? "Distinction"
-        //        : mark >= 65 ? "Pass"
-        //        : mark < 20 ? "Failed no retake"
-        //        : "Failed with retake";
-        //}
+        public static string Grade(int mark)
+        {
+            if (mark < 0 || mark > 100)
+            {
+                throw new ArgumentOutOfRangeException("Must be between 0 and 100 inclusive");
+            }
+            return mark >= 85 ? "Distinction"
+                : mark >= 65 ? "Pass"
+                : mark < 20 ? "Failed no retake"
+                : "Failed with retake";
+        }
     }
 }

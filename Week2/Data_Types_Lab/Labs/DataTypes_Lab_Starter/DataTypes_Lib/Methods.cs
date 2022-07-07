@@ -5,9 +5,14 @@ namespace DataTypes_Lib
     public static class Methods
     {
         // write a method to return the product of all numbers from 1 to n inclusive
-        public static int Factorial(int n)
+        public static Int64 Factorial(int n)
         {
-            throw new NotImplementedException();
+            Int64 sum = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                sum = sum * i;
+            }
+            return sum;
         }
 
         public static float Mult(float num1, float num2)

@@ -109,7 +109,7 @@ namespace UnitTests
         [TestCase(-100)]
         public void GivenNegativeAge_AvailableClassifications_Throws(int age)
         {
-            Assert.That(() => Program.AvailableClassifications(age), Throws.TypeOf<ArgumentOutOfRangeException>().With.Message);
+            Assert.That(() => Program.AvailableClassifications(age), Throws.TypeOf<ArgumentOutOfRangeException>());
         }
     }
 }
