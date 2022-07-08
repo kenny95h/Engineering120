@@ -6,7 +6,7 @@
 
 3. [Wednesday](##3. Wednesday) - Exceptions & Data Types
 
-4. [Thursday](##4. Thursday) - 
+4. [Thursday](##4. Thursday) - String, Arrays, Date Type & Enums
 
 5. [Friday](##5. Friday) - 
 
@@ -246,9 +246,23 @@
   * `TypeOf` can be changed to `InstanceOf<Expression>` if we want to test if it catches any exception, instead of a specific one
   * Add `.With.Message.Contain("message returned by exception");` 
 
+### Data Types
 
-
-
+* C# is a strongly typed language - Have to explicitly state the data type of the variable, and the type checks happen before runtime:
+  * Statically typed - Once you define the type you can't change it
+  * Type Safe - Prevented from assigning a different type to a variable that has already been assigned before runtime
+  * Memory Safe - Restricted in the memory we can access
+  * Class based - All methods must be written within a specific type
+* Implicitly typed variables - using the `var` keyword creates a variable and is assigned a type after the assignment. Only used at a method level
+* Explicitly typed variables - type is assigned at the time the variable is created
+* Different integral types take up different sizes (in bits)
+* Use underscores instead of commas when representing large numbers
+* **Floating point** numbers are anything with a decimal
+  * Three types (**float, double, decimal**) and the level of precision is different in each
+  * The decimal is the most precise point and is inferred with 1.0m
+* **Safe (implicit) casting** - can store smaller data types into bigger data types without losing anything
+* We need to **explicitly cast** the data type for the other way, however this may lose some data
+* 
 
 ## 4. Thursday
 
