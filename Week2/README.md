@@ -6,9 +6,9 @@
 
 3. [Wednesday](##3. Wednesday) - Exceptions & Data Types
 
-4. [Thursday](##4. Thursday) - String, Arrays, Date Type & Enums
+4. [Thursday](##4. Thursday) - String, Arrays, Date Type 
 
-5. [Friday](##5. Friday) - 
+5. [Friday](##5. Friday) - Enums & Methods
 
 
 
@@ -249,25 +249,157 @@
 ### Data Types
 
 * C# is a strongly typed language - Have to explicitly state the data type of the variable, and the type checks happen before runtime:
+
   * Statically typed - Once you define the type you can't change it
   * Type Safe - Prevented from assigning a different type to a variable that has already been assigned before runtime
   * Memory Safe - Restricted in the memory we can access
   * Class based - All methods must be written within a specific type
+
 * Implicitly typed variables - using the `var` keyword creates a variable and is assigned a type after the assignment. Only used at a method level
+
 * Explicitly typed variables - type is assigned at the time the variable is created
+
 * Different integral types take up different sizes (in bits)
+
 * Use underscores instead of commas when representing large numbers
+
 * **Floating point** numbers are anything with a decimal
+
   * Three types (**float, double, decimal**) and the level of precision is different in each
   * The decimal is the most precise point and is inferred with 1.0m
+
 * **Safe (implicit) casting** - can store smaller data types into bigger data types without losing anything
+
 * We need to **explicitly cast** the data type for the other way, however this may lose some data
-* 
+
+  * ```c#
+    double d = (int)b;
+    ```
+
+* **Stack overflow/underflow** - when the maximum/minimum storage size is met it will loop back around
+
+  * Need to be aware of where these edge cases are so we can test for it
+
+  * We can wrap the code in a checked block to throw an exception of it occurs
+
+  * ```c#
+    checked
+    {
+    	codeToRun;
+    }
+    ```
+
+* The convert class converts one .net base type to another:
+
+  * ```c#
+    Convert.double(variable);
+    ```
+
+* **Narrowing conversion** - When we lose data after converting from a larger data type to a smaller data type.
+
+  
 
 ## 4. Thursday
 
+### Strings
 
+* A **string** is an array of characters and is defined with the `string` keyword, and the assignment in double quotes:
 
+  * ``` c#
+    string message = "A string";
+    ```
 
+* `string` is an alias of the `String` class so can use the String methods
+
+* Strings are *immutable* so cannot be changed; it would need to be assigned a new variable instead.
+
+* The `StringBuilder` class can be used instead as this represents a mutable string:
+
+  * ```c#
+    StringBuilder sb = new StringBuilder("text");
+    ```
+
+  * This will take up less memory as it will not need to create a new storage location for every change. However, less methods are available for this
+
+* **String interpolation** - a cleaner way of concatenating strings and variables by using the `$` special character:
+
+  * ```c#
+    $"Your {variable} is {variable}";
+    ```
+
+  * For formatting a string value we use `\key`. Multiple different format keys are available
+
+  * For formatting a value we follow the function with `{statement:key}`.
+
+* **Parse statement** - try to convert a string variable to a numeric value at runtime
+
+  * ```c#
+    dataType variable = dataType.Parse(variableToParse);
+    ```
+
+  * ```c#
+    var success = dataType.TryParse(variableToParse, out dataType returnValueVariable);
+    ```
+
+### Arrays
+
+* **Arrays** are fixed length lists
+
+* An empty array can be initialised by specifying the length:
+
+  * ```c#
+    int[] array = new int[10];
+    ```
+
+* An array can be initialised with elements, and the number of elements will determine the length:
+
+  * ```c#
+    int[] array = {1, 2, 3};
+    ```
+
+* We can initialise **2D arrays** which set the number of rows and columns:
+
+  * ```c#
+    int[,] grid = new int[2,4];
+    ```
+
+  * Extra dimensions can be specified by adding further `,`.
+
+* A **jagged array** is an array of other arrays. Only need to specify the length of the outer array (the array that holds other arrays) when initialising:
+
+  * ```c#
+    int[][] jaggedArray = new int[2][];
+    ```
+
+* The inner arrays are set after:
+
+  * ```c#
+    jaggedArray[0] = new int[6];
+    jaggedArray[1] = new int[3];
+    ```
+
+### Date/Time Type
+
+* The **DateTime Class** can be used to check the current time
+
+  * `DateTime.Now;`
+
+* Computers track the time in ticks, which is very millisecond:
+
+  * `DateTime.Now.Ticks;`
+
+* The `AddDays(numberOfDays)` method adds days on to the current time.
+
+* Date only can also be used
+
+  * ```c#
+    new DateOnly(YYYY, MM, DD);
+    ```
+
+* Dates can be formatted using the `.ToString()` method
+
+  
 
 ## 5. Friday
+
+### Enums

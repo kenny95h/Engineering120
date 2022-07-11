@@ -12,11 +12,47 @@ public class Program
         //Console.WriteLine(Add(1,2,3));
         //Console.WriteLine(Add(1,2));
 
+        #region Tuples
         var myTuple = ("Kai", "Chan", 60);
         (string fName, string lName, int age) myTuple2 = ("Kai", "Chan", 60);
         Console.WriteLine(myTuple2.fName);
+        #endregion
+
+        //bool z;
+        //var result2 = DoThat(11, "Hello", out z);
+
+        int number = 10;
+        Subtract(number);
+        
+        Console.WriteLine(number);
+        
+        Subtract(ref number);
+        Console.WriteLine(number);
     }
 
+    public static void Subtract(int num)
+    {
+        num--;
+    }
+
+    public static void Subtract(ref int num)
+    {
+        num--;
+    }
+
+
+    public static int DoThat(int x, string y, out bool z)
+    {
+        Console.WriteLine(y);
+        z = (x > 10);
+        return x * x;
+    }
+    public static (int, int) ConvertPoundsToStones(int pounds)
+    {
+        if (pounds < 0)
+            throw new ArgumentOutOfRangeException();
+        return (pounds == 0 ? 0 : pounds / 14, pounds % 14);
+    }
     public static int DoThis(int x, string y = "sad")
     {
         Console.WriteLine($"I'm feeling {y}");
@@ -45,5 +81,15 @@ public class Program
 
         return pizza + ".";
     }
+
+    #region Memory 
+    public static void Swap(ref int a, ref int b)
+    {
+        int c = a;
+        a = b;
+        b = c;
+    }
+    #endregion
+
 }
 
