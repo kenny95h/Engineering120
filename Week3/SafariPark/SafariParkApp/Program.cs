@@ -264,7 +264,6 @@ namespace SafariParkApp
             };
 
             vehicleSet.Add(new Vehicle(1, 100) { NumPassengers = 1 });
-            vehicleSet.Add(new Vehicle());
         }
 
         public static void AutoShootOut(Hunter playerOne, Hunter playerTwo)
