@@ -8,7 +8,7 @@
 
 **4.** [Thursday](##4. Thursday) - SOLID principles & Comparing Objects 
 
-**5.** [Friday](##5. Friday) - Collections
+**5.** [Friday](##5. Friday) - Collections & Advanced Unit Testing
 
 
 
@@ -363,3 +363,61 @@
 ## 5. Friday
 
 ### Collections
+
+* ```c#
+  List<Type> myList = new List<Type>();
+  ```
+
+* Can add to the list using object initialisers, or the add method:
+
+  * ```c#
+    var myList = new List<Type>()
+    {
+    	New ObjectType ("variable","variable"),
+    	variable1
+    };
+    myList.Add(variable2);
+    ```
+
+  * Multiple methods are available in the `List` class
+
+* **Linked Lists** provide a reference from one item to the next. They are stored in an order, but not necessarily next to each other in the heap
+
+  * They do not have indexes, so elements cannot be accessed by index
+  * Can only add to the end and the start of the list
+  * Use the `Find` method to find a specific element
+
+* **Queues** - First In First Out (FIFO) collection of objects:
+
+  * `Enqueue(element)` - adds an element
+  * `Dequeue()` - removes the oldest element
+  * `Peek()` - returns the oldest element
+
+* **Stack** - Last In First Out (LIFO) collection of objects:
+
+  * `Push(element)` - inserts element at top of stack
+  * `Pop()` - removes element off top of stack
+  * `Peek()` - returns the newest element
+
+* **HashSet** - A set of values that are not sorted and cannot contain duplicates
+
+  * Duplicates are checked by their hash code
+  * Does not have an index or key for the elements 
+  * Optimised for fast performance
+
+* **Dictionaries** - List of key/value pairs
+
+  * Duplicate keys are not allowed
+
+  * Two data types are specified, and the pairs are written within two sets of curly brackets
+
+  * ```c#
+    var myDictionary = new Dictionary<string,int>
+    {
+    	{"word", 2}
+    	{"word1", 1}
+    	{"word2", 2}
+    };
+    ```
+
+### Advanced Unit Testing
