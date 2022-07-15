@@ -8,7 +8,7 @@
 
 4. [Thursday](##4. Thursday) - String, Arrays, Date Type 
 
-5. [Friday](##5. Friday) - Enums & Methods
+5. [Friday](##5. Friday) - Enums, Methods & the Memory Model
 
 
 
@@ -261,11 +261,19 @@
 
 * Different integral types take up different sizes (in bits)
 
+  * `sbyte & byte` - 8-bit
+  * `short & ushort` - 16-bit
+  * `int & uint` - 32-bit
+  * `long & ulong` - 64-bit
+
 * Use underscores instead of commas when representing large numbers
 
 * **Floating point** numbers are anything with a decimal
 
   * Three types (**float, double, decimal**) and the level of precision is different in each
+  * `float` - 4-byte
+  * `double` - 8-byte
+  * `decimal` - 16-byte
   * The decimal is the most precise point and is inferred with 1.0m
 
 * **Safe (implicit) casting** - can store smaller data types into bigger data types without losing anything
@@ -403,3 +411,127 @@
 ## 5. Friday
 
 ### Enums
+
+* **Enums** are a way to represent some values that you do not want to change, but need to access
+
+* The enum is declared in the namespace, but outside of the class:
+
+  * ```c#
+    public enum enumName
+    {
+    	VARIABLE1, VARIABLE2, VARIABLE3
+    }
+    ```
+
+* These are constants so cannot be changed. They can then be called in the class using dot notation `enumName.VARIABLE1;`
+
+### Methods
+
+* Methods are made of a signature, and the body:
+
+  * ```c#
+    public static int DoThis(int x, int y)
+    {
+    	codeToRun;
+    }
+    ```
+
+* The signature is made up of the visibility, return type, name, and parameters to take in brackets
+
+* Visibility types:
+
+  * public - accessed from anywhere
+  * private - only accessed in the class
+  * internal - accessed in that namespace
+  * protected - accessed in that class and any subclass
+
+* Static methods belong to that class
+
+* Anything in the body can only be accessed within that scope
+
+* The `new` keyword is what calls a constructor. These are methods without a return type
+
+* `sealed` methods cannot be overridden by other classes
+
+* `async` methods are used when it awaits to return
+
+* We can provide optional parameters in the method at the end of the parameter list:
+
+  * ```c#
+    public int DoThis(int x, string y = "default")
+    ```
+
+  * In this case, only one parameter is required when the method is called
+
+* Methods should not take too many arguments
+
+* We can use the named parameters within a method call so we do not have to call in order:
+
+  * ```c#
+    DoThis(y: "hello", x: 3)
+    ```
+
+* **Overloaded method** - multiple methods with the same signature, but with a different parameters list
+
+* **Tuples** - hold multiple data types within one statement:
+
+  * ```c#
+    var myTuple = ("string", "string2", 3);
+    ```
+
+* Can call an individual item in the tuple by calling the item number (starting at 1):
+
+  * ```c#
+    myTuple.item2;
+    ```
+
+* We can declare items specifically, then we can call them by a specified name:
+
+  * ```c#
+    (string firstTup, string secondTup, int age) myTuple = ("string", "string2", 3);
+    myTuple.firstTup;
+    ```
+
+* We can also use a tuple as a return type for a method:
+
+  * ```c#
+    public static (int variableName, int variableName2) DoThis()
+    {
+        return (int, int);
+    }
+    ```
+
+  
+
+### Memory Model
+
+* `int` is a **primitive type** so is passed a value - stored on stack
+
+* `string` is an object so is passed a reference - stored on the heap
+
+* When we use the `out` keyword, we are editing the variable in memory, not passing a copy. Used for returning multiple variables
+
+* We can use the `ref` keyword to pass the memory location of a primitive type:
+
+  * ```c#
+    int number = 10;
+    DoThis(number);
+    public static void DoThis(ref int num)
+    {
+    	changeNumber;
+    }
+    ```
+
+  * This would change the number value to 9 in `int number = 10`
+
+* **Primitive Data Types** - numeric types, booleans, chars - value types are stored on the stack which is fast access memory - The value is stored directly in that variable
+
+* **Reference Types** - arrays, lists, strings - stored on the heap - not stored in the variable (only the variable is stored on the stack), it stores a memory address of the element that has just been created - element is stored on the heap
+
+* **Scope** - where the variable is visible form - class, method or block
+
+* **Stack** - variables are stored as they are declared
+
+* **Heap** - organised storage
+
+* **Garbage collector** - Identifies dead (non-referenced) elements, compacts heap, removes dead elements

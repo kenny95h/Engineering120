@@ -13,21 +13,26 @@ public class Program
         //Console.WriteLine(Add(1,2));
 
         #region Tuples
-        var myTuple = ("Kai", "Chan", 60);
-        (string fName, string lName, int age) myTuple2 = ("Kai", "Chan", 60);
-        Console.WriteLine(myTuple2.fName);
+        //var myTuple = ("Kai", "Chan", 60);
+        //(string fName, string lName, int age) myTuple2 = ("Kai", "Chan", 60);
+        //Console.WriteLine(myTuple2.fName);
         #endregion
 
         //bool z;
         //var result2 = DoThat(11, "Hello", out z);
 
-        int number = 10;
-        Subtract(number);
-        
-        Console.WriteLine(number);
-        
-        Subtract(ref number);
-        Console.WriteLine(number);
+        //int number = 10;
+        //Subtract(number);
+
+        //Console.WriteLine(number);
+
+        //Subtract(ref number);
+        //Console.WriteLine(number);
+
+        string a = "15";
+        int b = Convert.ToInt32(a);
+        Console.WriteLine(b);
+
     }
 
     public static void Subtract(int num)

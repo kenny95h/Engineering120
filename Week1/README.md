@@ -1,16 +1,24 @@
 # Week 1: 27/06 - 01/07
 
-[Monday](##1. Monday) - Induction information
+1. [Monday](##1. Monday) - Induction information
 
-[Tuesday](##2. Tuesday) - Interview preparation
+2. [Tuesday](##2. Tuesday) - Interview preparation & .Net
 
-[Wednesday](##3. Wednesday) - Markdown, Shelves, Scripting & Git
+3. [Wednesday](##3. Wednesday) - Markdown, Shelves, Scripting & Git
 
-[Thursday](##4. Thursday) - Intro to Visual Studio, Agile & Scrum
+4. [Thursday](##4. Thursday) - Intro to Visual Studio, Agile & Scrum
 
-[Friday](##5. Friday) - Agile Project & Sales meeting
+5. [Friday](##5. Friday) - Agile Project & Sales meeting
 
+## 2. Tuesday
 
+### .Net
+
+* .Net 5/.Net 6 is the next iteration of .Net Core
+
+* .Net Framework is not cross-platform and the libraries are stored on the device, unlike on .Net Core where they are stored in the code
+
+  
 
 ## 3. Wednesday
 
