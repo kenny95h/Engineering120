@@ -421,3 +421,40 @@
     ```
 
 ### Advanced Unit Testing
+
+* Can run tests through the command window by going to the folder where the solution is:
+
+  * dotnet test --list-tests - shows list of all tests available in folder
+  * dotnet test - runs the tests in the command window
+
+* The standard way to write a test is known as the **constraint model**:
+
+  * ```c#
+    Assert.That(result, Is.EqualTo(expectedResult), "Optional failure message");
+    ```
+
+* The old model still works but is no longer updated and is known as the **classical model**:
+
+  * ```c#
+    Assert.That(expectedResult, result, "Optional failure message");
+    ```
+
+* The variable we are setting is known as the subject and can be inferred as either:
+
+  * ```c#
+    var subject = objectToTest;
+    var _sut = objectToTest; //subject under test
+    ```
+
+* There are multiple statements that we can assert to run tests:
+
+  * ```c#
+    Assert.That(variable.MethodName()); //checks method returns true
+    Assert.That(variable.MethodName(), Is.False); //checks method returns false
+    Assert.That(variable.MethodName(), Does.Contain("word")); //checks method return contains specified word
+    Assert.That(variable.MethodName(), Is.Not.Empty); //checks method does not return empty
+    Assert.That(listVariable, Has.Count.EqualTo(4)); //checks list has count equal to 4
+    Assert.That(num, Is.InRange(num1, num2)); //checks the variable is in the range specified
+    ```
+
+  
