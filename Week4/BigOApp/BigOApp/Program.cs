@@ -26,5 +26,15 @@
             return sum;
 
         }
+
+        //recursiveMergeSort(array)
+            //if (Array size 1)
+            //return Array
+            //else
+                //divide array in half
+                //callmethodleftside
+                //callmethodrightside
+                //merge two halves ordered (call to different method)
+            //return array
     }
 }

@@ -7,21 +7,17 @@ namespace ClassesApp
     // A Class to represent a Person
     public class Person 
     {
-        private string fn;
+        private string _firstName;
         private string _lastName;
         private int _age;
-        private string _hobbies;
-        private int _houseNo;
-        private string _street;
-        private string _town;
+        private Address _address;
+        
         public Person() { }
-        public Person(string fName, string lName, int hNo = 0, string street = "", string town = "")
+        public Person(string fName, string lName, Address address = null)
         {
-            fn = fName;
+            _firstName = fName;
             _lastName = lName;
-            _houseNo = hNo;
-            _street = street;
-            _town = town;
+            _address = address;
         }
 
         public int Age
@@ -32,7 +28,7 @@ namespace ClassesApp
 
         public string GetFullName()
         {
-            return $"{fn} {_lastName}";
+            return $"{_firstName} {_lastName}";
         }
 
         public string Move()
@@ -47,13 +43,10 @@ namespace ClassesApp
 
         public override string ToString()
         {
-            var addressString = $"Address: {_houseNo} {_street}, {_town}";
-            return $"{base.ToString()} Name: {fn}  { _lastName} Age: {Age}. {addressString}";
+            
+            return $"{base.ToString()} Name: {_firstName}  {_lastName} Age: {Age}. Address: {_address.GetAddress()}";
         }
 
-        //public int StupidMethod()
-        //{
-        //    return 3;
-        //}
+       
     }
 }

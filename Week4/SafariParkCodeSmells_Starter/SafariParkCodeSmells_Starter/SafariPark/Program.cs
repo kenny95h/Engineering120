@@ -74,12 +74,7 @@ namespace ClassesApp
             //}
 
             Console.WriteLine();
-            var theWeapons = new List<IShootable>();
-            theWeapons.Add(new Weapon(WeaponType.LaserGun, "ToysRUs"));
-            theWeapons.Add(new Weapon(WeaponType.Waterpistol, "Supersoaker"));
-            theWeapons.Add(new Weapon(WeaponType.LaserGun, "ZippaZap"));
-            theWeapons.Add(new Hunter("Cathy", "French", new Camera("Minolta")));
-            theWeapons.Add(new Camera("Pentax"));
+            List<IShootable> theWeapons = PopulateWeapons();
             foreach (var w in theWeapons)
             {
                 Console.WriteLine(w.Shoot());
@@ -100,5 +95,15 @@ namespace ClassesApp
 
         }
 
+        private static List<IShootable> PopulateWeapons()
+        {
+            var theWeapons = new List<IShootable>();
+            theWeapons.Add(new Weapon(WeaponType.LaserGun, "ToysRUs"));
+            theWeapons.Add(new Weapon(WeaponType.Waterpistol, "Supersoaker"));
+            theWeapons.Add(new Weapon(WeaponType.LaserGun, "ZippaZap"));
+            theWeapons.Add(new Hunter("Cathy", "French", new Camera("Minolta")));
+            theWeapons.Add(new Camera("Pentax"));
+            return theWeapons;
+        }
     }
 }

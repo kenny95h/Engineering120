@@ -4,9 +4,9 @@
 
 **2.** [Tuesday](##2. Tuesday) - C# Core Test & GitHib Collaboration
 
-**3.** [Wednesday](##3. Wednesday) - 
+**3.** [Wednesday](##3. Wednesday) - Big-O Notation & Recursion
 
-**4.** [Thursday](##4. Thursday) - 
+**4.** [Thursday](##4. Thursday) - Refactoring, Code Smells & Design Patterns
 
 **5.** [Friday](##5. Friday) - 
 
@@ -68,6 +68,10 @@
 
 * Confirms the program works as expected
 
+* Provides a suite of regression tests to confirm that the code continues to work at multiple stages
+
+* Assists in refactoring code
+
 * When you test often and fully it assists in writing good code
 
 * Test Automation Pyramid:
@@ -77,12 +81,42 @@
   * 20% API/Integration/Component Tests
   
   * 10% GUI Tests
-    
-    
-
-
 
 ## 2. Tuesday
+
+### GitHub Collaboration
+
+* Only commit to the main branch at the end of each sprint
+
+* Make all changes to the dev branch
+
+* The feature branch is taken off the dev branch to work on individual features, multiple feature branches can be taken at the same time
+
+* A pull request is used to merge a feature branch into the dev branch
+
+* Any other users will then merge this into their feature branch and continue on
+
+* `git branch` - is the main branch that needs to be commited at the end of the sprint
+
+* `git checkout -b nameOfNewBranch` - creates a new branch and takes you to it
+
+* `git checkout nameOfBranch` - takes to that branch
+
+* `dotnet new console` - creates a new console app in the branch
+
+* `git push -set-upstream origin dev` - pushes the commit to the dev branch
+
+* `git pull origin` - to pull a branch made in github
+
+* In github - settings - branches - add protection rule (require pull request before merging)
+
+* Update default branch in settings to dev - when cloned after this, it will automatically refer to this branch
+
+* Pull requests in github will show all requests from users
+  
+  * Files changed window to confirm the changes - review changes - happy - approve
+  
+  * Merge pull requests - confirm merge
 
 ## 3. Wednesday
 

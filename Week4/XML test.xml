@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sparta>
+<course name="Engineering 120">
+	<trainer>
+		<firstname>Nish</firstname>
+	<trainer>
+		<firstname>Peter</firstname>
+			<trainees>
+				<trainee>
+					<firstname>Kenny</firstname>
+				</trainee>
+				<trainee>
+					<firstname>John</firstname>
+				</trainee>
+				<trainee>
+					<firstname>Tom</firstname>
+				</trainee>
+				<trainee>
+					<firstname>Kai</firstname>
+				</trainee>
+				<trainee>
+					<firstname>Maks</firstname>
+				</trainee>
+			</trainees>
+	</trainer>
+	</trainer>
+</course>
+</sparta>
