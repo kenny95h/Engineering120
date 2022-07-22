@@ -1,0 +1,8 @@
+Debug - The value of i is 0
+Trace - The value of i is 0
+Debug - The value of i is 1
+Trace - The value of i is 1
+Debug - The value of i is 2
+Trace - The value of i is 2
+Debug - The value of i is 3
+Trace - The value of i is 3
