@@ -496,7 +496,7 @@
 
 * `StreamReader` (starts the stream to read from) and `StreamWriter` (starts the stream to write to) are derived from the `TextReader` class.
 
-* The `using` keyword only uses the resource within the scope, then it is discarded, using the discard method once it exits the scope:
+* The `using` keyword only uses the resource within the scope, then it is discarded, using the dispose method once it exits the scope:
   
   * ```csharp
     //Creating the stream and streaming the text from the program to the directory
@@ -510,5 +510,3 @@
         ... while statement to read back to the program until null
     }
     ```
-
-
