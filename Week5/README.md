@@ -4,7 +4,7 @@
 
 **2.** [Tuesday](##2. Tuesday) - ISTQB Chapter 1 & Chapter 2
 
-**3.** [Wednesday](##3. Wednesday) - 
+**3.** [Wednesday](##3. Wednesday) - ISTQB Chapter 3 & Chapter 4
 
 **4.** [Thursday](##4. Thursday) - 
 
@@ -482,7 +482,7 @@
   
   * Has an actual result and an expected result
 
-* **Test Procedures** - individual steps that allow you to execute the test case (Given...When...Then)
+* **Test Procedures**(Scripts) - individual steps that allow you to execute the test case (Given...When...Then)
 
 * **Suite of Tests** - all of the test procedures that can be ran (test explorer - run all tests)
 
@@ -514,7 +514,7 @@
 
 * **Seven Testing Principles:**
   
-  * Testing shows the presence of bugs, not they absence
+  * Testing shows the presence of bugs, not their absence
   
   * Exhaustive testing is impossible
   
@@ -666,13 +666,167 @@
   
   * System:
     
-    * 
+    * Testing the whole system - end-to-end
+    
+    * Functions and performance
+    
+    * Verifying functional (interactions) and non-functional (attributes) behaviours are as specified
+    
+    * Context affects the type of system testing
   
   * Acceptance:
     
-    *   
+    * Tests to determine whether the system meets user requirements
+    
+    * Operational acceptance testing - is functional in perceived environment (backups, updates, user training, etc)
+    
+    * Contract and regulation acceptance testing - meeting contractual and legal criteria
+    
+    * Alpha testing - performed at developing site, but not by developers
+    
+    * Beta testing - performed by customer with their own hardware
+
+* All test types can be done at all levels
+
+* **Test types:**
+  
+  * Functional testing - black box - verifying actions
+  
+  * Non-functional testing - attributes of the component
+  
+  * Structural testing - white box - how code makes functionality work
+  
+  * Change related testing:
+    
+    * Confirmation testing - testing defect has been fixed
+    
+    * Regression testing - checking fixed defects haven't caused other defects (typically automated)
+    
+    * Maintenance testing - live system tests after changes to the system:
+      
+      * Modification
+      
+      * Migration
+      
+      * Retirement
+      
+      * Hotfixes
 
 ## 3. Wednesday
+
+### ISTQB Chapter 3
+
+* **Static testing** - examination of software without code execution - reviews of documentation or static code analysis
+
+* Anything within the software development cycle can be reviewed (code, test plans, contracts, etc)
+
+* Abides by the principle of early testing
+
+* **Levels of formality:**
+  
+  * Informal - not planned or documented - may be paired programming
+  
+  * Walkthrough - led by author - prior preperation - enables learning - scribe
+  
+  * Technical review - led by facilitator - individual preparation essential - gain consensus - scribe
+  
+  * Inspection - led by facilitator - prior preparation essential - find defects
+
+* **Roles:**
+  
+  * Facilitator - running of review
+  
+  * Manager - decides on execution and confirms objectives are met
+  
+  * Author - creator of document
+  
+  * Reviewers - fault finding
+  
+  * Scribe - documents meeting
+  
+  * Review leader - plans and follow-ups
+
+* Activities of formal review (**PIIIF**):
+  
+  * **P**lanning - define scope, roles, exit and entry criteria
+  
+  * **I**nitiate review - distribute documents and explain objectives
+  
+  * **I**ndividual review - issues recorded
+  
+  * **I**ssue communication and analysis - note defects, evaluate issues, and make decisions
+  
+  * **F**ixing and reporting - fix defects and record status. Gather metrics
+
+* Review techniques:
+  
+  * **Ad hoc** - little preparation
+  
+  * **Checklist-based** - systematic coverage of typical defects as effects detected
+  
+  * **Scenarios and dry runs** - provided with structured guidelines for the work product
+  
+  * **Role-based** - evaluate from the perspective of individual stakeholder roles
+  
+  * **Perspective-based** - reviewers attempt to use the work product as stakeholder
+
+### ISTQB Chapter 4
+
+* **Test Plan** - a document describing the scope, approach and resources:
+  
+  * **Test basis** - knowledge used to derive tests from
+    
+    * Though test analysis:
+  
+  * **Test conditions** - the aim/goal of a certain test
+    
+    * Through test design:
+  
+  * **Test cases** - inputs, actions and expected results
+    
+    * Through test implementation:
+  
+  * **Test procedures** - steps we take to carry out the test case
+
+* Every test case needs to have an expected result. These results are determined from the **Test oracle**:
+  
+  * Requirements
+  
+  * Existing systems
+  
+  * User manuals
+  
+  * Specialised knowledge
+
+* **Traceability** is the degree to which a relationship can be established between work products
+
+* Most important tests must be executed at the earliest:
+  
+  * Priority
+  
+  * Dependency
+  
+  * Regression testing
+
+* **Test coverage** - provides a quantitative measure of how much of the system has been tested
+
+* **Black-box testing** - examines the functionality of an application without knowledge of its internal structures:
+  
+  * **Smoke test** - a system test with a purpose of finding major flaws. Verifies critical functions
+  
+  * **Sanity test** - check bugs reported in previous builds are fixed. Verifies new functionality
+  
+  * **Decision table testing** - lists input conditions that can occur and all actions that can arise from them - columns are test cases, and the actions are expected results
+  
+  * **State transition testing** - system is represented in one state with transitions from that state to another. Each transition is a test case:
+    
+    * States - how something exists at that time
+    
+    * Transitions - the change from one state to another
+    
+    * Inputs/Events - triggered by transitions
+    
+    * Actions - what can result from a transition
 
 ## 4. Thursday
 
