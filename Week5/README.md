@@ -2,7 +2,7 @@
 
 **1.** [Monday](##1. Monday) - SQL
 
-**2.** [Tuesday](##2. Tuesday) - 
+**2.** [Tuesday](##2. Tuesday) - ISTQB Chapter 1 & Chapter 2
 
 **3.** [Wednesday](##3. Wednesday) - 
 
@@ -463,6 +463,214 @@
   * To return a query that does not remove duplicates use the keyword `UNION ALL`
 
 ## 2. Tuesday
+
+### ISTQB Chapter 1
+
+* **Quality** - what the customer wants
+
+* Testing proves the system works according to requirements
+
+* Testers assess the quality of the system
+
+* Developers fix the system and therefore increase the quality of the system
+
+* **Test Basis** - knowledge from which we derive tests - user manual, requirements, process diagrams, etc
+
+* **Test Condition** - features of a system that need testing
+
+* **Test Case** - for each test condition we have a test case. A set of preconditions and results
+  
+  * Has an actual result and an expected result
+
+* **Test Procedures** - individual steps that allow you to execute the test case (Given...When...Then)
+
+* **Suite of Tests** - all of the test procedures that can be ran (test explorer - run all tests)
+
+* **Error** - human action which produces an incorrect result - mistake in code, typo in requirements, etc
+  
+  * This may lead to:
+
+* **Defect** - when the actual result doesn't meet the expected result
+  
+  * If found by a user:
+
+* **Failure** - does not meet the user expectations
+
+* The later we find a defect, the more expensive it is to fix - this is because we need to find the root cause
+
+* **Root cause analysis** - used to find the cause of a defect (5 Whys)
+
+* If we have a good suite of comprehensive unit tests, then when we build up the system, we will know it will be strong. Prevent defects from spreading to higher test levels
+
+* **Debugging** - identify the cause of bugs or defect in code and undertake corrections - by developers
+
+* **Testing** - systematic exploration of a component with the main aim of finding and reporting defects - by testers
+
+* **Quality Assurance** - procedures that are in place to ensure quality of the software - adhering to processes to prevent bugs being introduced
+
+* **Quality Control** - activities which support the achievement of quality - ensure implementation of QA strategy
+
+* **Testing** - check if system operates as it should and finds defects - reduces level of risk to the quality of they system
+
+* **Seven Testing Principles:**
+  
+  * Testing shows the presence of bugs, not they absence
+  
+  * Exhaustive testing is impossible
+  
+  * Early testing
+  
+  * Defect clustering - most defects occur in small amount of the code
+  
+  * The pesticide paradox - doing the same tests will not uncover new defects
+  
+  * Testing is context dependent - test levels and what systems, will change tests needed
+  
+  * Absence of errors fallacy - can never be certain our system cannot fail - ensuring program meets user requirements
+
+* **The Test Process:**
+  
+  * Test Planning
+  
+  * Test Monitoring & Control
+  
+  * Test Analysis
+  
+  * Test Design
+  
+  * Test Implementation
+  
+  * Test Execution
+  
+  * Test Completion
+
+* Remembered as PMC - TAD - TIE - Complete
+
+* **Test planning:**
+  
+  * Test Plans - techniques and tasks - who does what
+  
+  * Test Schedule - deadlines - exit criteria
+
+* **Test Monitoring & Control:**
+  
+  * Test Progress Reports - Monitoring - comparison of progress against plans
+  
+  * Test Summary Reports - Control - actions to take if there are deviations
+
+* **Test Analysis:**
+  
+  * Test Conditions - analyse test basis to identify features and define what to test
+  
+  * Test Charters - conditions for exploratory testers
+
+* **Test Design:**
+  
+  * Test Cases - design and prioritise test cases
+  
+  * Test Data Design - data to support test cases from test conditions
+  
+  * Test environment design
+
+* **Test Implementation:**
+  
+  * Test Procedures
+  
+  * Test Suites
+  
+  * Creation and verification of test environment and data
+  
+  * Test execution schedule
+
+* **Test Execution:**
+  
+  * Documentation of the status of test cases
+  
+  * Defect reports
+
+* **Test Completion:**
+  
+  * Test Summary Reports
+  
+  * Actionable items for improvement
+  
+  * Finalised testware
+
+* It is imperative to establish and maintain traceability throughout the test process:
+  
+  * Test Basis -- Test Cases -- Defects
+
+### ISTQB Chapter 2
+
+* Methodology depends on factors:
+  
+  * Nature of project
+  
+  * Project schedule
+  
+  * Resource availability
+
+* **Sequential Life Cycles:**
+  
+  * Waterfall Model - defined start and end:
+    
+    * Requirements change - tests are at the end
+    
+    * Estimation of time/cost will be difficult
+  
+  * V-Model - tests written throughout writing specification:
+    
+    * Test documents have to be updated throughout
+    
+    * No early prototype
+
+* Verification - are we building the product correctly
+
+* Validation - are we building the right product
+
+* **Incremental Life Cycles:**
+  
+  * Agile - split into increments to develop a piece of working software
+
+* Every testing level has its own objectives and characteristics. Attributes include:
+  
+  * Test basis
+  
+  * Test object
+  
+  * Defects and failures
+
+* **Testing Levels (U IS A):**
+  
+  * Unit:
+    
+    * Each unit is created in isolation
+    
+    * Individual components tested (methods in classes)
+  
+  * Integration:
+    
+    * Units integrated and tested together
+    
+    * Focus on integration, not functionality of modules
+    
+    * How different modules work together
+    
+    * Big Bang Integration - testing all components at the same time
+    
+    * Incremental Integration:
+      
+      * Top Down - testing top-level code only (stubs used instead of back-end code)
+      
+      * Bottom Up - testing back-end only (drivers used instead of top-level code)
+  
+  * System:
+    
+    * 
+  
+  * Acceptance:
+    
+    *   
 
 ## 3. Wednesday
 

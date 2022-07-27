@@ -51,12 +51,43 @@
 --('Mr', 'Thomas', 'Wolstencroft', 'Engineering 120'),
 --('Mr', 'Jonathan', 'Crofts', 'Engineering 120')
 
-SELECT title + ' ' + t.first_name + ' ' + t.last_name AS "Full Name", 
-	t.course_name AS "Course", 
-	tner.first_name + ' ' + tner.last_name AS "Trainer"
-FROM Trainees t
-INNER JOIN Courses c
-	ON t.course_name = c.course_name
-INNER JOIN Trainers tner
-	ON c.trainerID = tner.trainerID
-ORDER BY t.first_name ASC;
+--SELECT title + ' ' + t.first_name + ' ' + t.last_name AS "Full Name", 
+--	t.course_name AS "Course", 
+--	tner.first_name + ' ' + tner.last_name AS "Trainer"
+--FROM Trainees t
+--INNER JOIN Courses c
+--	ON t.course_name = c.course_name
+--INNER JOIN Trainers tner
+--	ON c.trainerID = tner.trainerID
+--ORDER BY t.first_name ASC;
+
+--DROP TABLE IF EXISTS addresses
+--CREATE TABLE addresses (
+--	house_no INT,
+--	house_name VARCHAR (30) DEFAULT '',
+--	street VARCHAR (30),
+--	city VARCHAR (20),
+--	country VARCHAR (20),
+--	postcode VARCHAR (10),
+--	CONSTRAINT address_id PRIMARY KEY (house_no, house_name, postcode)
+--)
+
+--INSERT INTO addresses (
+--	house_no, street, city, country, postcode
+--) VALUES (
+--	30, 'North Road', 'Durham', 'United Kingdom', 'DH2 1PR'
+--);
+
+--ALTER TABLE Trainees
+--ADD ref_house_no INT;
+
+--ALTER TABLE Trainees
+--ADD ref_house_name VARCHAR (25) DEFAULT '';
+
+--ALTER TABLE Trainees
+--ADD ref_postcode VARCHAR(10);
+
+ALTER TABLE Trainees
+ADD FOREIGN KEY (ref_house_no, ref_house_name, ref_postcode) REFERENCES Addresses(house_no, house_name, postcode);
+--SELECT address_id
+--FROM addresses
