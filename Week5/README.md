@@ -6,7 +6,7 @@
 
 **3.** [Wednesday](##3. Wednesday) - ISTQB Chapter 3 & Chapter 4
 
-**4.** [Thursday](##4. Thursday) - 
+**4.** [Thursday](##4. Thursday) - ISTQB Chapter 4, Chapter 5 & Chapter 6
 
 **5.** [Friday](##5. Friday) - 
 
@@ -827,7 +827,191 @@
     * Inputs/Events - triggered by transitions
     
     * Actions - what can result from a transition
+  
+  * **Equivalence partitioning** - an input field can have an infinite number of inputs. Split inputs into ranges
+  
+  * **Boundary value analysis** - values near the boundaries of the classes
+  
+  * **Use case testing** - describes interactions between actors and systems
 
 ## 4. Thursday
+
+### ISTQB Chapter 4 Cont
+
+* **Experience based testing:**
+  
+  * **Error guessing** - where the experience of testers is used to anticipate what defects might be present
+  
+  * **Exploratory testing** - experiences testers actively control the design of the tests as those tests are performed and use the information gained while testing. Focused testing - designed and executed simultaneously
+  
+  * **Checklist-based testing** - an experienced tester creating a checlist of typical defects they know. Supports functional and non-functional tests. Coverage defined by completion of checklist
+
+* **White-box testing** - tests internal structures as opposed to functional testing. Flow of inputs and outputs through the system:
+  
+  * **Statement coverage** - check if each statement in the code has been executed at least once
+  
+  * **Decision coverage** - check if each branch from a decision point has been executed at least once - guarantees 100% statement coverage
+  
+  * Loops and linear statements always take 1 test case for full decision and statement coverage
+  
+  * If statements take 1 test case for statement and 2 test cases for full decision coverage
+  
+  * If else and switch statements take the same amount of test cases for statement and decision coverage
+
+* Choosing a technique is context dependent
+
+### ISTQB Chapter 5
+
+* **Roles in project team:**
+  
+  * Project managers
+  
+  * QA managers
+  
+  * Developers
+  
+  * Business analysts and SMEs
+  
+  * Infrastructure personnel
+  
+  * IT operations
+  
+  * Testers
+  
+  * Test managers
+
+* **Independence:**
+  
+  * Separation of responsibilities, which encourages the accomplishment of objective testing
+  
+  * The more removed you are from the code the less bias you will have when testing the code
+
+* **Test planning activities:**
+  
+  * Scope and risk
+  
+  * What to test
+  
+  * Who will test what
+  
+  * Scheduling
+  
+  * Levels of detail
+  
+  * Test levels and entry/exit criteria
+
+* **Entry criteria** - specific conditions that must be present before a process can begin
+
+* **Exit criteria** - conditions that must be achieved in order to declare a test level or set of tests complete
+
+* **Estimation techniques:**
+  
+  * **Metric based** - data collected from previous project
+  
+  * **Expert based** - estimations based on experience
+
+* **Test progress monitoring and control** - constantly review actual against planned. Metrics include:
+  
+  * Percentage of work done
+  
+  * No. of test cases executed
+  
+  * Defect total and details
+  
+  * Milestones achieved
+  
+  * Test coverage
+
+* **Test control** - monitoring the progress of the project, and taking corrective measures to stay on target:
+  
+  * Re-prioritisng tests
+  
+  * Change test schedule
+  
+  * Review product risks
+  
+  * Adjust scope
+
+* **Test strategies** - define how testing will be done:
+  
+  * **Preventative** - early testing
+  
+  * **Reactive** - left until just before execution
+
+* **Test approaches:**
+  
+  * **Analytical** - based on analysis. Anything to do with risk
+  
+  * **Model-based** - anything use based
+  
+  * **Methodical** - use of predefined tests or test conditions. Checlist based
+  
+  * **Process compliant** - based on industry specific standards
+  
+  * **Reactive** - exploratory testing
+  
+  * **Directed** - guided by SMEs
+  
+  * **Regression Averse** - avoid previous versions
+
+* **Configuration management** - establish and maintain the integrity of the products:
+  
+  * All testware is identified, version controlled and tracked so traceability can be maintained
+  
+  * All documents are referenced unambiguously
+
+* Configuration management helps to uniquely identify:
+  
+  * **The tested item** - individual item to test
+  
+  * **Test documents** - documentation around testing (test scripts)
+  
+  * **The tests** - anything used in testing
+  
+  * **Test harnesses** - stubs and drivers
+
+* **Risk** - a factor that could result in a negative consequence
+
+* **Risk analysis** - process of risk identification and risk assessment
+
+* Classifying risks:
+  
+  * **Product risk** - factors relating to the work produced
+  
+  * **Project risk** - factors related to the way the work is carried out
+
+* Quantify risk by level of likelihood and impact
+
+* **Risk-based testing** - prioritising test areas based in levels of risk. Adjust tests efforts to focus on high-risk areas as they change
+
+* **Defect management** - the process of recognising, investigating, taking action and disposing defects
+
+* Logging and classifying defects:
+  
+  * When found
+  
+  * Test environment in
+  
+  * Version of software
+  
+  * Expected and actual result
+
+### ISTQB Chapter 6
+
+* **Test tool** - a software product that supports test activities:
+  
+  * Test planning
+  
+  * Design
+  
+  * Execution
+  
+  * Reporting
+  
+  * Monitoring
+
+* They improve efficiency and automate activities that require significant resources or cannot be executed manually
+
+* Gather metrics, roll out incrementally, monitor benefits and make sure everyone is well trained
 
 ## 5. Friday
