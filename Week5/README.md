@@ -746,7 +746,7 @@
   
   * Review leader - plans and follow-ups
 
-* Activities of formal review (**PIIIF**):
+* Activities of formal review (**PIRIRICF**):
   
   * **P**lanning - define scope, roles, exit and entry criteria
   
@@ -776,7 +776,7 @@
   
   * **Test basis** - knowledge used to derive tests from
     
-    * Though test analysis:
+    * Through test analysis:
   
   * **Test conditions** - the aim/goal of a certain test
     
@@ -842,9 +842,9 @@
   
   * **Error guessing** - where the experience of testers is used to anticipate what defects might be present
   
-  * **Exploratory testing** - experiences testers actively control the design of the tests as those tests are performed and use the information gained while testing. Focused testing - designed and executed simultaneously
+  * **Exploratory testing** - experienced testers actively control the design of the tests as those tests are performed and use the information gained while testing. Focused testing - designed and executed simultaneously
   
-  * **Checklist-based testing** - an experienced tester creating a checlist of typical defects they know. Supports functional and non-functional tests. Coverage defined by completion of checklist
+  * **Checklist-based testing** - an experienced tester creating a checklist of typical defects they know. Supports functional and non-functional tests. Coverage defined by completion of checklist
 
 * **White-box testing** - tests internal structures as opposed to functional testing. Flow of inputs and outputs through the system:
   
@@ -944,7 +944,7 @@
   
   * **Model-based** - anything use based
   
-  * **Methodical** - use of predefined tests or test conditions. Checlist based
+  * **Methodical** - use of predefined tests or test conditions. Checklist based
   
   * **Process compliant** - based on industry specific standards
   
