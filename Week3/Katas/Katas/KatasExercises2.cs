@@ -18,15 +18,16 @@ namespace Katas
 
         public static char[] DuplicateCharacters(string word)
         {
- 
-            var charList = new List<char>();
-            foreach (char c in word)
-            {
-                if (word.Count(x => (x == c)) > 1)
-                    if (!charList.Contains(c))
-                        charList.Add(c);
-            }
-            return charList.ToArray();
+
+            //    var charList = new List<char>();
+            //    foreach (char c in word)
+            //    {
+            //        if (word.Count(x => x == c) > 1)
+            //            if (!charList.Contains(c))
+            //                charList.Add(c);
+            //    }
+            //    return charList.ToArray();
+            return word.GroupBy(x => x).Where(y => y.Count() > 1).Select(z => z.Key).ToArray();
         }
     }
 }
