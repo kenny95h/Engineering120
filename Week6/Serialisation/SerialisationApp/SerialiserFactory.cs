@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace SerialisationApp
 {
-    public interface ISerialise
+    public abstract class SerialiserFactory
     {
-        void SerialiseToFile<T>(string filePath, T item);
-        T DeserialiseFromFile<T>(string filePath);
+        public abstract ISerialise GetSerialiser(int serialiser);
     }
 }
