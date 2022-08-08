@@ -1,6 +1,7 @@
 ﻿using RestSharp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using APIClientApp.PostcodesIOService.DataHandling;
 
 namespace APIClientApp
 {
@@ -75,7 +76,7 @@ namespace APIClientApp
 
             var list = bulkPostcodeJsonResponse["result"].ToList();
 
-            var singlePostcodeObjectResponse = JsonConvert.DeserializeObject<singlePostcodeResponse>(singlePostcodeResponse.Content);
+            var singlePostcodeObjectResponse = JsonConvert.DeserializeObject<SinglePostcodeResponse>(singlePostcodeResponse.Content);
             var bulkPostcodeObjectResponse = JsonConvert.DeserializeObject<BulkPostcodeResponse>(bulkPostcodeResponse.Content);
 
             //foreach (var p in bulkPostcodeObjectResponse.result)
@@ -89,17 +90,8 @@ namespace APIClientApp
             //var selectedAdminCountyAlt = bulkPostcodeObjectResponse.result[0].result.admin_county;
             //Console.WriteLine(selectedAdminCountyAlt);
 
-            var bulkOutClient = new RestClient();
-            var outcodes = new
-            {
-                Outcodes = new string[] { "pr3", "m45", "ex16" }
-            };
-            var bulkOutRequest = new RestRequest("https://api.postcodes.io/outcodes/:outcode", Method.Get);
-            bulkOutRequest.AddJsonBody(outcodes);
-            RestResponse bulkOutResponse = client.Execute(bulkOutRequest);
-            var bulkOutcodeJsonResponse = JObject.Parse(bulkOutResponse.Content);
-            Console.WriteLine(bulkOutcodeJsonResponse);
 
+            // Outcodes version
             var outClient = new RestClient();
             string outcode = "pr3";
             var outRequest = new RestRequest($"https://api.postcodes.io/outcodes/{outcode}", Method.Get);

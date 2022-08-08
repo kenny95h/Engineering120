@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APIClientApp
+namespace APIClientApp.PostcodesIOService.DataHandling
 {
     // Property names MUST correspond to the keys of the JSON response
-    public class BulkPostcodeResponse
+    public class BulkPostcodeResponse : IResponse
     {
         // Allows us to rename properties from JSON
         [JsonProperty("status")]
@@ -16,11 +16,31 @@ namespace APIClientApp
         public Result[] result { get; set; }
     }
 
-    public class singlePostcodeResponse
+    public class SinglePostcodeResponse : IResponse
     {
         public int Status { get; set; }
         public Postcode result { get; set; }
 
+    }
+
+    public class OutcodeResponse : IResponse
+    {
+        public int status { get; set; }
+        public OutcodeResult result { get; set; }
+    }
+
+    public class OutcodeResult
+    {
+        public string outcode { get; set; }
+        public float longitude { get; set; }
+        public float latitude { get; set; }
+        public int northings { get; set; }
+        public int eastings { get; set; }
+        public string[] admin_district { get; set; }
+        public string[] parish { get; set; }
+        public string[] admin_county { get; set; }
+        public string[] admin_ward { get; set; }
+        public string[] country { get; set; }
     }
 
     public class Result
