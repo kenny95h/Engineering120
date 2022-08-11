@@ -2,9 +2,9 @@
 
 **1.** [Monday](##1. Monday) - Moq
 
-**2.** [Tuesday](##2. Tuesday) - BDD & HTTP/CSS
+**2.** [Tuesday](##2. Tuesday) - HTTP/CSS
 
-**3.** [Wednesday](##3. Wednesday) - 
+**3.** [Wednesday](##3. Wednesday) - Testing Web Apps & Automation Testing
 
 **4.** [Thursday](##4. Thursday) - 
 
@@ -103,9 +103,28 @@
     var mockCustomerService = new Mock<ICustomerService>(MockBehavior.Strict);
     ```
 
-
-
 ## 2. Tuesday
+
+### HTML & CSS
+
+* **H**yper**T**ext **M**arkup **L**anguage
+
+* **C**ascading **S**tyle **S**heets - describes the presentation of a document
+
+* **Document Object Model** - a tree structure of what the html will look like - allows us to treat it as an object
+
+* `<!DOCTYPE html>` - information to the browser about what document type to expect
+
+* The `<head>` contains meta declarations, as attributes, about technical data about the html doc:
+  
+  * ```html
+    <meta charset=”utf-8” />
+    <meta name=”author” content=”A. Trainee” />
+    ```
+
+* 
+
+
 
 ## 3. Wednesday
 
