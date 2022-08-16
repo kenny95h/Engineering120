@@ -15,7 +15,7 @@ namespace AP_TestAutomationFramework.lib
         public AP_CreateAccountPage AP_CreateAccountPage { get; set; }
         #endregion
         //Constructor for driver and config for teh service
-        public AP_Website(int pageLoadInsecs = 10, int implicitWaitInSecs = 10, bool isHeadless = false)
+        public AP_Website(int pageLoadInsecs = 20, int implicitWaitInSecs = 20, bool isHeadless = false)
         {
             //instatiate the driver
             SeleniumDriver = new SeleniumDriverConfig<T>(pageLoadInsecs, implicitWaitInSecs, isHeadless).Driver;
