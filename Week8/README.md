@@ -2,7 +2,7 @@
 
 **1.** [Monday](##1. Monday) - 
 
-**2.** [Tuesday](##2. Tuesday) - Exploratory Testing &  Performance Testing
+**2.** [Tuesday](##2. Tuesday) - Exploratory Testing, Performance Testing & JMeter
 
 **3.** [Wednesday](##3. Wednesday) - 
 
@@ -142,7 +142,73 @@
   
   * A tool to run the tests
 
+### JMeter
 
+* Open with JMeter Batch file in JMeter folder
+
+* Create testplan:
+  
+  * New button
+
+* Create a thread group (users):
+  
+  * Right-click testplan - add - threads - thread group
+  
+  * Provide number of users - ramp-up period (time for all users) - actions to be taken after sampler error
+
+* Add a sampler (http):
+  
+  * Right-click thread group - add - sampler - HTTP request
+  
+  * Copy http protocol - copy address into server name - Add HTTP requests
+
+* Add listeners (store/view results) - can use multiple types:
+  
+  * Right-click thread group - add - listener - choose type
+  
+  * Table listener - each iteration of user in new row - sample time (response) - status (pass/fail) - latency (time to first bite) - connect time (to connect to server)
+  
+  * Tree listener - do not use for large data performance tests - provides in depth data
+  
+  * Aggregate listener - average of all samples
+  
+  * Graph listener - visual representation
+  
+  * Summary listener - shortened version of aggregate
+  
+  * Data writer listener - save to csv file
+
+* Assertions - checks on request/response - can be added at different levels (testplan/thread) - right-click level - add - assertions:
+  
+  * Response assertion - select field to test - matching rule - input expected result (pattern)
+  
+  * Duration assertion - specify maximum expected duration time
+  
+  * Size assertion - select response size field to test - specify size bytes - specify comparison rule
+  
+  * HTML assertion - checking HTML of response against standard syntax - can be logged in text file
+  
+  * JSON assertion - specify path to check if exists - specify expected values
+  
+  * XPath assertion - check value of XPath location
+
+* HTTP Test Script Recorder - Right-click testplan - add non-test elements - recorder. An element in JMeter that helps record HTTP request
+  
+  * Do not have to manually add every request
+
+* Right-click thread group - add - logic controller - recording controller:
+  
+  * Store events into separate recording controllers (rename accordingly)
+
+* In test script recorder, specify the target controller
+
+* Set up proxy and certificate:
+  
+  * Settings in chrome - search proxy - open - manual proxy setup - localhost - port number from JMeter
+  
+  * search certificates - manage certificates - import from JMeter bin - ApacheJMeter.crt
+
+* Start from JMeter - Give transaction name (test name) - go to browser to site to test - complete actions - stop in JMeter to finish recording
 
 ## 3. Wednesday
 
