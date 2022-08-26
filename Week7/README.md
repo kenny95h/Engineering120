@@ -145,7 +145,7 @@
   
   * Browser document first
   
-  * The header style tahe
+  * The header style tags
   
   * The in-line tags
 
@@ -235,9 +235,9 @@
 
 * **Selenium WebDriver** - an API that allows our C# code to interact with the drivers (takes control of the browser)
 
-* In Visual studion, install NuGet packages (selenium.webdriver and selenium.webdriver.chromedriver) - global using OpenQA.Selenium.Chrome;
+* In Visual studio, install NuGet packages (selenium.webdriver and selenium.webdriver.chromedriver) - global using OpenQA.Selenium.Chrome;
 
-* We use a using statement to open the stream for running the selenium webdriver test.
+* We use a `using` statement to open the stream for running the selenium webdriver test.
 
 * We grab the elements by inspecting the elements in the browser
 
@@ -268,7 +268,7 @@
     using(IWebDriver driver = new ChromeDriver(options))
     ```
 
-* **Page Object Model** (**POM**) - wraps a HTML page with an application-specific API allowing you to manipulate page lements without digging around in HTML
+* **Page Object Model** (**POM**) - wraps a HTML page with an application-specific API allowing you to manipulate page elements without digging around in HTML
   
   * The page object should encapsulate the mechanics required to find and manipulate the data in the GUI control itself
   
