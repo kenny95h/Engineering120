@@ -1,4 +1,4 @@
-# Week 8: 22/08 - 26/08
+# Week 9: 22/08 - 26/08
 
 **1.** [Monday](##1. Monday) - Python Intro, Data Types, and File Input/Output
 
@@ -1448,5 +1448,3 @@
     import getpass
     password = getpass.getpass(‘Input password: ‘)
     ```
-
-
