@@ -4,9 +4,9 @@
 
 **2.** [Tuesday](##2. Tuesday) - Unit Testing & TDD, Virtual Environments, PyCharm & PyTest, and Test Doubles
 
-**3.** [Wednesday](3. Wednesday) - 
+**3.** [Wednesday](3. Wednesday) - ClassMethod & StaticMethod, More Inheritance, Class Composition and Type Hinting
 
-**4.** [Thursday](##4. Thursday) - 
+**4.** [Thursday](##4. Thursday) - Testing, Testing Endpoints
 
 **5.** [Friday](##5. Friday) -  
 
@@ -244,7 +244,268 @@ Unit Testing & TDD
 
 ## 3. Wednesday
 
+### ClassMethod & StaticMethod
+
+* A **classmethod** is a method that links directly to the class, but does not need to create an instance of the class. This is created using the `@classmethod` decorator:
+  
+  * ```python
+    class ClassTest:
+        @classmethod
+        def class_method(cls):
+            print(f"Called class method for {cls}")
+    ```
+
+* This needs to take in `cls` as a parameter, as this is calling on the class object itself:
+  
+  * ```python
+    ClassTest.class_method() # infers the cls argument as a parameter
+    ```
+
+* A **staticmethod** is used to create functions inside classes that do not have anything to do with the class object, but logically makes sense to be held within that class. This is created using the `@staticmethod` decorator:
+  
+  * ```python
+    class ClassTest:
+        @staticmethod
+        def static_method():
+            print("Called static method")
+    ```
+
+* When we call on this static method, we simply call the method name on the class name. Unlike other methods, it does not need to take anything in as a parameter:
+  
+  * ```python
+    ClassTest.static_method()
+    ```
+
+* Class methods are used as factories. This is when we want to use a class within a class to define different types of objects:
+  
+  * ```python
+    class Book:
+        TYPES = ("hardcover", "paperback")
+        def __init__(self, name, book_type, weight):
+            self.name = name
+            self.book_type = book_type
+            self.weight = weight
+        
+        @classmethod
+        def hardcover(cls, name, page_weight):
+            return Book(name, Book.TYPES[0], page_weight + 100)
+    ```
+
+* We can then create an instance of the hardcover object within the book object to automatically update the variables and assign the book type:
+  
+  * ```python
+    book = Book.hardcover("Harry Potter", 1500)
+    ```
+
+### More Inheritance
+
+* We can use the `super()` method to call the details from the superclass, within the initialisation or within overridden methods:
+  
+  * ```python
+    class Device:
+        def __init__(self, name, connected_by):
+            self.name
+            self.connected_by = connected_by
+            self.connected = True
+    
+        def __str__(self):
+            return f"Device {self.name} ({self.connected_by})"
+    
+    
+    class Printer(Device):
+        def __init__(self, name, connected_by, capacity):
+            super().__init__(name, connected_by) # calls the init method of the superclass
+            self.capacity = capacity
+            self.remaining_pages = capacity
+    
+        def __str__(self):
+            return f"{super.().__str__()} ({self.remaining_pages} pages remaining)"
+    ```
+
+* If you call a method that is not in the class, it will then look for the method in the superclass and run the method from there
+
+### Class Composition
+
+* Used when inheritance does not logically make sense. We can instead pass in objects from one class into another classes init method:
+  
+  * ```python
+    class BookShelf:
+        def __init__(self, *books):
+            self.books = books
+    
+    class Book:
+        def __init__(self, name):
+            self.name = name
+    ```
+
+### Type Hinting
+
+* Specifying the data type of the parameters and the return type:
+  
+  * ```python
+    from typing import List # recommended for type hinting - all collection types used should be imported
+    
+    def my_func(sequence: List) -> float:
+        # code to execute
+    ```
+
+* This will then display a message when calling the method of the parameter type to input, and the return type to expect
+
+* If a method is returning an object of the class you are in, it is written as `"ClassName"`
+
+
+
 ## 4. Thursday
+
+### Testing
+
+* When creating a test class in Python we need to inherit from the `TestCase` class to give us access to the test methods. We need to import this class, as well as the class that we want to run the tests against
+  
+  * ```python
+    from unittest import TestCase
+    from post import Post # class to test
+    class PostTest(TestCase):
+        # Test methods
+    ```
+
+* Each test we write is a method within the class, that mustbe named `test_whatToTest`, to be automatically recognised as a test method. We write the tests using the `assert` method from the `TestCase` class:
+  
+  * ```python
+    def test_create_post(self):
+        p = Post("Test", "Test Content") # instantiate object
+        self.assertEqual("Test", p.title) # asserts expected result is equal to actual result
+        self.assertEqual("Test Content", p.content)
+    ```
+
+* If the assert statement is true, the test has passed. If false, the test has failed and we will be displayed with the error and details of the failed test
+
+* We can also use an assert statement to check the key/value pairs of a dictionary are the same:
+  
+  * ```python
+    def test_json(self):
+        p = Post("Test", "Test Content")
+        expected = {"title": "Test", "content", "Test Content"}
+        self.assertDictEqual(expected, p.json())
+    ```
+
+* There are multiple different assert statements that can be used to check the equality of data types, such as `assertListEqual`
+
+* When testing the output to a console we need to use the `patch` class. As soon as we patch a function, it replaces this function with a mock
+
+* We can use the patch class, to patch the print method. We use the `with` and `as` keywords to assign the patch to a variable to be tested. This installs helpers on it that allow us to create a test:
+  
+  * ```python
+    from unittest.mock import patch
+    class AppTest(TestCase):
+        def test_print_blog(self):
+            blog = Blog("Test", "Test Author")
+            app.blogs = {"Test": blog}
+            with patch("builtins.print") as mocked_print: # we patch the module followed by the function
+                app.print_blogs()
+                mocked_print.assert_called_with("- Test by Test Author (0 posts)")
+    ```
+
+* We can use the patch method for many different built-in functions, including the input function, to test it is displaying the correct message to the user:
+  
+  * ```python
+    def test_input(self):
+        with patch("builtins.input") as mocked_input:
+            app.menu()
+            mocked_input.assert_called_with("Message to user")
+    ```
+
+* We can also use patch to check our own methods have been called within our program:
+  
+  * ```python
+    def test_menu_calls_print_blogs(self):
+        with patch("app.print_blogs") as mocked_print_blogs:
+            with patch("builtins.input", return_value="q"):
+                app.menu()
+                mocked_print_blogs.assert_called() # asserts the mocked method was called
+    ```
+
+* As the method we are testing also includes an input method, we need to include a patch for the input method to ignore waiting for user input, otherwise the test would never complete
+
+* We can also assign a `return_value` to a patch. This will provide a pre-assigned value to return everytime that mocked method is called
+
+* In some cases, we may need to provide different results for each time the input method is called, so instead of a single `return_value`, we can assign a `side_effect` to the mock:
+  
+  * ```python
+    with patch("builtins.input") as mocked_input:
+        mocked_input.side_effect = ("Test", "Test Author")
+        app.ask_create_blog()
+        self.assertIsNotNone(app.blogs.get("Test")) # asserts that when we look for the blog with title test, it does not return None
+    ```
+
+* When we are reusing code in our tests we can create a setup method to run before each test:
+  
+  * ```python
+    class TestClass(TestCase):
+        def setup(self):
+            # code to execute before every test
+    ```
+
+### Testing Endpoints
+
+* We can use the `Flask` library to test an endpoint in Python:
+  
+  * `pip install flask`
+
+* Once installed we can setup the class to run the endpoint:
+  
+  * ```python
+    from flask install flask, jsonify
+    app = Flask(__name__) # creates new flask object to run server
+    @app.route("/") # adds endpoint to the url
+    def home():
+        return jsonify({"message": "Hello, world!"}) # need to import jsonify as this converts the dictionary input to a JSON body that can be understood by the server
+    if __name__ == '__main__':
+        app.run() # only runs the server if this program is being ran directly
+    ```
+
+* Once we have created the server and access to the endpoint we can run the tests to ensure the endpoint is valid:
+  
+  * ```python
+    class TestHome(TestCase):
+        def test_home(self):
+            with app.test_client() as c: # launches a test client instead of running the app in full
+                resp = c.get("/") # makes get response, and stores in variable
+                self.assertEqual(resp.status_code, 200)
+    ```
+
+* We can also use an assert method to check the data coming back from the endpoint. We need to `import json` to convert the json response to Python:
+  
+  * ```python
+    self.assertEqual(json.loads(resp.get_data()), {"message": "Hello, world!"})
+    ```
+
+* We can refactor these web tests by creating a base test file so we can make the test data reusable
+
+* It is important that we name the base test file differently as it will not include any tests to run. Ending `_test`, instead of starting `test_`
+
+* This allows us to remove the `unittest` and app imports, as well as the `test_client` setup so this can be changed in the base file if needed, instead of in every test/testcase:
+  
+  * ```python
+    from unittest import TestCase
+    from app import app
+    
+    class BaseTest(TestCase):
+        def setUp(self):
+            app.testing = True # tells flask we are running the app for testing
+            self.app = app.test_client # sets up the test_client to be used in every test
+    ```
+
+* We can then go back to the test file and have this import the base test, and extend from the base test as well as refactoring the test_client to call this in the base test:
+  
+  * ```python
+    from tests.system.base_test import BaseTest
+    class TestHome(BaseTest):
+        def test_home(self):
+            with self.app() as c:
+                # execute test here
+    ```
+
+
 
 ## 5. Friday
 
