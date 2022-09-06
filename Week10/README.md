@@ -1,4 +1,4 @@
-# Week 10: 29/08 - 02/08
+# Week 10: 29/08 - 02/09
 
 **1.** [Monday](##1. Monday) - 
 
@@ -8,7 +8,7 @@
 
 **4.** [Thursday](##4. Thursday) - Testing, Testing Endpoints
 
-**5.** [Friday](##5. Friday) -  
+**5.** [Friday](##5. Friday) -  REST API Testing
 
 ## 1. Monday
 
@@ -240,8 +240,6 @@ Unit Testing & TDD
 
 * The `MagicMock` class provides default implementation of many of the default magic method (such as, `__str__`)
 
-
-
 ## 3. Wednesday
 
 ### ClassMethod & StaticMethod
@@ -285,7 +283,7 @@ Unit Testing & TDD
             self.name = name
             self.book_type = book_type
             self.weight = weight
-        
+    
         @classmethod
         def hardcover(cls, name, page_weight):
             return Book(name, Book.TYPES[0], page_weight + 100)
@@ -311,6 +309,12 @@ Unit Testing & TDD
         def __str__(self):
             return f"Device {self.name} ({self.connected_by})"
     
+    
+    ```
+
+    ```
+    
+    ```
     
     class Printer(Device):
         def __init__(self, name, connected_by, capacity):
@@ -352,8 +356,6 @@ Unit Testing & TDD
 * This will then display a message when calling the method of the parameter type to input, and the return type to expect
 
 * If a method is returning an object of the class you are in, it is written as `"ClassName"`
-
-
 
 ## 4. Thursday
 
@@ -505,8 +507,52 @@ Unit Testing & TDD
                 # execute test here
     ```
 
-
-
 ## 5. Friday
 
-### 
+### REST API Testing
+
+* For the  testing framework, we may have multiple dependencies we need to install to access the API. These are generally kept in a `requirements.txt` file. This can then be called on in the terminal to install all dependencies in the file:
+  
+  * `pip install -r requirements.txt`
+
+* We can create some unit tests on a REST API to test the basic functionality of the code, such as, instantiating a new object. However, the majority will be integration or system tests
+
+* It is important to set up a base test to act as a parent class to each non-unit test. This allows for instantiation of the database dynamically and males sure that it is a new, blank database each time
+
+* It is good practice to run tests on the same type of database as is used by the API
+
+* We use the base test to setup a new blank database, with the app specific tables, and then set up the app to run in a test client:
+  
+  * ```python
+    class BaseTest(TestCase):
+        def setUp(self):
+            app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" # sets up blank sqlite database in a new config file
+            with app.app_context(): # loads up all app variables, and acts as if the app is running
+                db.init_app(app) # initialised with app
+                db.create_all() # creates pre-defined tables in database
+            self.app = app.test_client()
+            self.app_context = app.app_context # allows us to access app context later in tests
+    ```
+
+* We also use the base test to create a teardown method to delete the database after each test:
+  
+  * ```python
+    def tearDown():
+        with app.app_context():
+            db.session.remove()
+            db.drop_all()
+    ```
+
+* We can then create the integration tests. This is testing the CRUD functionality of the API:
+  
+  * ```python
+    class ItemTest(BaseTest):
+        def test_crud(self):
+            with self.app_context(): # call the setup of the app from the base test
+                item = ItemModel("test", 19.99)
+                self.assertIsNone(ItemModel.find_by_name("test")) # check the item does not exist before creating in database
+                item.save_to_db() # add item to database
+                self.assertIsNotNone(ItemModel.find_by_name("test")) # check item has been added to database
+                item.delete_from_db() # remove item from database
+                self.assertIsNone(ItemModel.find_by_name("test")) # check item has been removed from database
+    ```
